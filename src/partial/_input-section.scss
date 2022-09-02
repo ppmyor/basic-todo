@@ -1,0 +1,51 @@
+@import "./variable";
+
+section {
+  position: relative;
+  height: 150px;
+  .input-section {
+    border-bottom: {
+      left-radius: 25px;
+      right-radius: 25px;
+    }
+    width: 100%;
+    height: 100%;
+    background-color: $input-background;
+    padding: {
+      left: 25px;
+      right: 25px;
+    }
+  }
+  input {
+    width: 100%;
+    margin: {
+      top: 30px;
+    }
+    padding: 10px 5px;
+    border: 1px solid $line;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  button {
+    cursor: pointer;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+
+    &.indigo {
+      @include button-color($indigo);
+      font-size: 2.5rem;
+    }
+    &.red {
+      @include button-color($red);
+      font-size: 1.5rem;
+    }
+  }
+}

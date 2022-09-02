@@ -1,0 +1,16 @@
+@import "./variable";
+
+header {
+  margin: {
+    top: 60px;
+    left: 30px;
+  }
+  h3 {
+    margin-top: 10px;
+  }
+  span {
+    display: inline-block;
+    margin-top: 45px;
+    color: $indigo;
+  }
+}

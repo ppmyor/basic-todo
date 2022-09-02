@@ -1,0 +1,141 @@
+.main-box {
+  width: 512px;
+  height: 768px;
+  background-color: #fff;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  margin-top: 60px;
+  margin-left: 30px;
+}
+header h3 {
+  margin-top: 10px;
+}
+header span {
+  display: inline-block;
+  margin-top: 45px;
+  color: #5c7cfa;
+}
+
+main {
+  border-top: 1px solid #adb5bd;
+  flex-grow: 1;
+  margin-top: 20px;
+  padding: 10px 30px;
+}
+main ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+main ul li {
+  cursor: pointer;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 20px;
+}
+main ul li:hover .delete-btn {
+  display: block;
+}
+main ul li .check-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  border: 1px solid #5c7cfa;
+  border-radius: 50%;
+  color: #5c7cfa;
+}
+main ul li .delete-btn {
+  display: none;
+  margin-left: auto;
+  color: #adb5bd;
+}
+
+section {
+  position: relative;
+  height: 150px;
+}
+section .input-section {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  width: 100%;
+  height: 100%;
+  background-color: #e9ecef;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+section input {
+  width: 100%;
+  margin-top: 30px;
+  padding: 10px 5px;
+  border: 1px solid #adb5bd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+section button {
+  cursor: pointer;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+}
+section button.indigo {
+  background: #5c7cfa;
+  font-size: 2.5rem;
+}
+section button.indigo:hover {
+  background: #8da4fc;
+}
+section button.indigo:active {
+  background: #2b54f8;
+}
+section button.red {
+  background: #ff6b6b;
+  font-size: 1.5rem;
+}
+section button.red:hover {
+  background: #ff9e9e;
+}
+section button.red:active {
+  background: #ff3838;
+}
+
+.fs-small {
+  font-size: 16px;
+}
+.fs-medium {
+  font-size: 20px;
+}
+.fs-large {
+  font-size: 36px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #dee2e6;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=App.css.map */
