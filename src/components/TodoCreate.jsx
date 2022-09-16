@@ -1,20 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
+import { useTodoDispatch, useTodoNextId } from "../TodoContext";
 
-function TodoCreate({ open }) {
+function TodoCreate() {
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
+
+  const dispatch = useTodoDispatch();
+  const nextId = useTodoNextId();
+
+  const onToggle = () => setOpen(!open);
+  const onChange = (e) => setValue(e.target.value);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: "CREATE",
+      todo: {
+        id: nextId.current,
+        text: value,
+        done: false,
+      },
+    });
+    setValue("");
+    setOpen(false);
+    nextId.current++;
+  };
   return (
     <section>
       {open ? (
-        <button className="indigo">+</button>
-      ) : (
         <div className="input-section">
-          <form action="#">
-            <input type="text" placeholder="할 일을 입력 후, Enter를 누르세요" id="input-todo" />
+          <form action="#" onSubmit={onSubmit}>
+            <input
+              type="text"
+              placeholder="할 일을 입력 후, Enter를 누르세요"
+              id="input-todo"
+              onChange={onChange}
+              value={value}
+            />
           </form>
-          <button className="red">X</button>
+          <button className="red" onClick={onToggle} open={open}>
+            X
+          </button>
         </div>
+      ) : (
+        <button className="indigo" onClick={onToggle} open={open}>
+          +
+        </button>
       )}
     </section>
   );
 }
 
-export default TodoCreate;
+export default React.memo(TodoCreate);

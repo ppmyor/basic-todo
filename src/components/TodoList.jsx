@@ -1,12 +1,16 @@
 import React from "react";
+import { useTodoState } from "../TodoContext";
 import TodoItem from "./TodoItem";
 
 function TodoList() {
+  const todos = useTodoState();
+
   return (
     <main>
       <ul>
-        <TodoItem text="프로젝트 생성 하기" done={true} />
-        <TodoItem text="프로젝트 생성 하기" done={false} />
+        {todos.map((todo) => (
+          <TodoItem key={todo.id} id={todo.id} text={todo.text} done={todo.done} />
+        ))}
       </ul>
     </main>
   );
