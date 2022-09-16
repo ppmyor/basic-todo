@@ -1,6 +1,10 @@
 import React from "react";
+import { useTodoState } from "../TodoContext";
 
 function TodoHeader() {
+  const todos = useTodoState();
+  console.log(todos);
+
   let now = new Date();
   let currentDate = `${now.getFullYear()}년 ${now.getMonth()}월 ${now.getDate()}일`;
   let getDay = "";
